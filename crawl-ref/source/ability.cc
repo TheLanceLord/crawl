@@ -488,8 +488,6 @@ static vector<ability_def> &_get_ability_list()
             2, 0, 0, -1, {fail_basis::invo, 30, 6, 20}, abflag::none },
         { ABIL_BEOGH_GIFT_ITEM, "Give Item to Named Follower",
             0, 0, 0, LOS_MAX_RANGE, {fail_basis::invo}, abflag::none },
-        { ABIL_BEOGH_RESURRECTION, "Resurrection",
-            0, 0, 28, -1, {fail_basis::invo}, abflag::none },
 
         // Jiyva
         { ABIL_JIYVA_OOZEMANCY, "Oozemancy",
@@ -3109,11 +3107,6 @@ static spret _do_ability(const ability_def& abil, bool fail, dist *target,
 
     case ABIL_BEOGH_GIFT_ITEM:
         if (!beogh_gift_item())
-            return spret::abort;
-        break;
-
-    case ABIL_BEOGH_RESURRECTION:
-        if (!beogh_resurrect())
             return spret::abort;
         break;
 

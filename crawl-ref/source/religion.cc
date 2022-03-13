@@ -244,7 +244,6 @@ const vector<vector<god_power>> & get_all_god_powers()
             { 4, ABIL_BEOGH_RECALL_ORCISH_FOLLOWERS, "recall your orcish followers" },
             { 5, "walk on water" },
             { 5, ABIL_BEOGH_GIFT_ITEM, "give items to your followers" },
-            { 6, ABIL_BEOGH_RESURRECTION, "revive fallen orcs" },
         },
 
         // Jiyva
