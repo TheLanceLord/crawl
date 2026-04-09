@@ -104,51 +104,6 @@ Crawl uses the following open source packages; thanks to their developers:
 * The libpng library, for tiles image loading ([license](crawl-ref/docs/license/libpng-LICENSE.txt)).
 
 Thank you, and have fun crawling!
-
-graph TD
-    subgraph "User Interaction"
-        U[User's Web Browser]
-        D[Developer]
-    end
-
-    subgraph "Web Application"
-        WC[Web Client - HTML/JS/CSS]
-        WS[Python Web Server - Tornado]
-    end
-
-    subgraph "Core Game"
-        CPP[C++ Game Engine]
-        SDL[SDL Library]
-        DATA[Game Data Files]
-    end
-
-    subgraph "Development & CI/CD"
-        GH[GitHub Repository]
-        GHA[GitHub Actions - CI/CD]
-        CT[Catch2 - C++ Tests]
-        TOX[Tox - Python Tests]
-    end
-
-    %% Connections
-    U --&gt;|HTTP/WebSocket| WC
-    WC --&gt;|WebSocket| WS
-    WS --&gt;|Process/IPC| CPP
-    CPP --&gt; SDL
-    CPP --&gt; DATA
-
-    D --&gt; GH
-    GH --triggers--&gt; GHA
-    GHA --runs--&gt; CT
-    GHA --runs--&gt; TOX
-
-    style U fill:#f9f,stroke:#333,stroke-width:2px
-    style D fill:#f9f,stroke:#333,stroke-width:2px
-    style WC fill:#bbf,stroke:#333,stroke-width:2px
-    style WS fill:#bbf,stroke:#333,stroke-width:2px
-    style CPP fill:#fb9,stroke:#333,stroke-width:2px
-    style SDL fill:#fb9,stroke:#333,stroke-width:2px
-    style DATA fill:#fb9,stroke:#333,stroke-width:2px
-    style GH fill:#9f9,stroke:#333,stroke-width:2px
     style GHA fill:#9f9,stroke:#333,stroke-width:2px
     style CT fill:#9f9,stroke:#333,stroke-width:2px
     style TOX fill:#9f9,stroke:#333,stroke-width:2px
